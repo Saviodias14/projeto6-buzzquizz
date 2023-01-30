@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script defer src="./assets/js/script.js"></script>
+    <title>BuzzQuizz</title>
+</head>
+
+<body>
+
+    <header>
+        <p class="header-title">BuzzQuizz</p>
+    </header>
+    <div class="paginaInicial">
+        <main>
+           <!--<div class="main-create">
+                <p>Você não criou nenhum quizz ainda :(</p>
+                <button onclick="abreCriacaoQuizz()">Criar Quizz</button>
+            </div>
+
+            <div class="hide user-list">
+                <div class="criaQuizz">
+                    <p class="user-title">Seus Quizzes</p>
+                    <button onclick="abreCriacaoQuizz()">
+                        <ion-icon class="criarQuizz-icon" name="add-circle"></ion-icon>
+                    </button>
+                </div>
+                <ul class="userQuizzes">
+                </ul>
+            </div>
+
+            <div class="main-list">
+                <p class="main-title">Todos os Quizzes</p>
+                <ul class="allQuizzes"></ul>
+            </div> -->
+        </main>
+        <footer></footer>
+    </div>
+
+    <div class="paginaCriacaoQuizz">
+        <!--<div class="comecoCriaQuizz hide">
+            <p class="comecoCriaQuizz-title ">Comece pelo começo</p>
+            <form class="box-form">
+                <input id="tituloQuizz" type="text" placeholder="Título do seu quizz">
+                <input id="imagemQuizz" type="url" placeholder="URL da imagem do seu quizz">
+                <input id="numPerguntasQuizz" type="text" placeholder="Quantidade de perguntas do quizz">
+                <input id="numNiveisQuizz" type="text" placeholder="Quantidade de níveis do quizz">
+            </form>
+            <p class="invisible">Os dados inseridos não são válidos!</p>
+            <button onclick="informacoesBasicasQuizz()">Prosseguir para criar perguntas</button>
+        </div>  
+
+        <div class="perguntasCriaQuizz comecoCriaQuizz hide">
+            <p class="comecoCriaQuizz-title">Crie suas perguntas</p>
+            <div class="box-form pt-00">
+                <div class="container">
+                    <p>Pergunta 1</p>
+                    <ion-icon onclick="abreFormulario(this)" name="create-outline"></ion-icon>
+                </div>
+                <form class="hide">
+                    <input class="question-text" id="textoPerguntaQuizz" type="text" placeholder="Texto da pergunta">
+                    <input class="question-color" id="corFundoQuizz" type="url" placeholder="Cor do fundo da pergunta">
+                    <p class="comecoCriaQuizz-question mt-18">Resposta correta</p>
+                    <input class="resposta1" id="respostaCorretaQuizz" type="text" placeholder="Resposta correta">
+                    <input class="imagemQuizz1 imagemURL" id="UrlImagemQuizz" type="text" placeholder="URL da imagem">
+                    <p class="comecoCriaQuizz-question mt-18">Resposta incorretas</p>
+                    <input class="resposta1" id="RespIncorreta1Quizz" type="text" placeholder="Resposta correta 1">
+                    <input class="imagemQuizz1 imagemURL" id="UrlImagem1Quizz" type="text" placeholder="URL da imagem 1">
+                    <input class="mt-18 resposta1" id="RespIncorreta2Quizz" type="text" placeholder="Resposta correta 2">
+                    <input class="imagemQuizz1 imagemURL" id="UrlImagem2Quizz" type="text" placeholder="URL da imagem 2">
+                    <input class="mt-18 resposta1" id="RespIncorreta3Quizz" type="text" placeholder="Resposta correta 3">
+                    <input class="imagemQuizz1 imagemURL" id="UrlImagem3Quizz" type="text" placeholder="URL da imagem 3">
+                </form>
+            </div>
+            <div class="box-form pt-00">
+                <div class="container">
+                    <p>Pergunta 2</p>
+                    <ion-icon onclick="abreFormulario(this)" name="create-outline"></ion-icon>
+                </div>
+                <form class="hide">
+                    <input class="question-text" id="textoPerguntaQuizz" type="text" placeholder="Texto da pergunta">
+                    <input class="question-color" id="corFundoQuizz" type="url" placeholder="Cor do fundo da pergunta">
+                    <p class="comecoCriaQuizz-question mt-18">Resposta correta</p>
+                    <input class="resposta2" id="respostaCorretaQuizz" type="text" placeholder="Resposta correta">
+                    <input class="imagemQuizz2 imagemURL" id="UrlImagemQuizz" type="text" placeholder="URL da imagem">
+                    <p class="comecoCriaQuizz-question mt-18">Resposta incorretas</p>
+                    <input class="resposta2" id="RespIncorreta1Quizz" type="text" placeholder="Resposta correta 1">
+                    <input class="imagemQuizz2 imagemURL" id="UrlImagem1Quizz" type="text" placeholder="URL da imagem 1">
+                    <input class="mt-18 resposta2" id="RespIncorreta2Quizz" type="text" placeholder="Resposta correta 2">
+                    <input class="imagemQuizz2 imagemURL" id="UrlImagem2Quizz" type="text" placeholder="URL da imagem 2">
+                    <input class="mt-18 resposta2" id="RespIncorreta3Quizz" type="text" placeholder="Resposta correta 3">
+                    <input class="imagemQuizz2 imagemURL" id="UrlImagem3Quizz" type="text" placeholder="URL da imagem 3">
+                </form>
+            </div>
+            <div class="box-form pt-00">
+                <div class="container">
+                    <p>Pergunta 2</p>
+                    <ion-icon onclick="abreFormulario(this)" name="create-outline"></ion-icon>
+                </div>
+                <form class="hide">
+                    <input class="question-text" id="textoPerguntaQuizz" type="text" placeholder="Texto da pergunta">
+                    <input class="question-color" id="corFundoQuizz" type="url" placeholder="Cor do fundo da pergunta">
+                    <p class="comecoCriaQuizz-question mt-18">Resposta correta</p>
+                    <input class="resposta3" id="respostaCorretaQuizz" type="text" placeholder="Resposta correta">
+                    <input class="imagemQuizz3 imagemURL" id="UrlImagemQuizz" type="text" placeholder="URL da imagem">
+                    <p class="comecoCriaQuizz-question mt-18">Resposta incorretas</p>
+                    <input class="resposta3" id="RespIncorreta1Quizz" type="text" placeholder="Resposta correta 1">
+                    <input class="imagemQuizz3 imagemURL" id="UrlImagem1Quizz" type="text" placeholder="URL da imagem 1">
+                    <input class="mt-18 resposta3" id="RespIncorreta2Quizz" type="text" placeholder="Resposta correta 2">
+                    <input class="imagemQuizz3 imagemURL" id="UrlImagem2Quizz" type="text" placeholder="URL da imagem 2">
+                    <input class="mt-18 resposta3" id="RespIncorreta3Quizz" type="text" placeholder="Resposta correta 3">
+                    <input class="imagemQuizz3 imagemURL" id="UrlImagem3Quizz" type="text" placeholder="URL da imagem 3">
+                </form>
+            </div>
+            <p class="invisible">Os dados inseridos não são válidos!</p>
+            <button onclick="criarPerguntasQuizz()">Prosseguir pra criar níveis</button>
+        </div>
+
+        <div class="nivelCriaQuizz hide">
+            <p class="comecoCriaQuizz-title mb-27">Agora, decida os níveis!</p>
+            <div class="box-form pt-00">
+                <div class="container">
+                    <p>Nível 1</p>
+                    <ion-icon onclick="abreFormulario(this)" name="create-outline"></ion-icon>
+                </div>
+                <form class="hide">
+                    <input class="nivel-titulo" id="tituloNivel1" type="text" placeholder="Título do nível">
+                    <input class="nivel-acerto-minimo" id="acertoMinimo1" type="text" placeholder="% de acerto mínima">
+                    <input class="nivel-URL" id="imgNivel1" type="url" placeholder="URL da imagem do nível">
+                    <input class="nivel-descricao" id="descricaoNivel1" type="text" placeholder="Descrição do nível">
+                </form>
+            </div>
+            <div class="box-form pt-00">
+                <div class="container">
+                    <p>Nível 2</p>
+                    <ion-icon onclick="abreFormulario(this)" name="create-outline"></ion-icon>
+                </div>
+                <form class="hide">
+                    <input class="nivel-titulo" id="tituloNivel2" type="text" placeholder="Título do nível">
+                    <input class="nivel-acerto-minimo" id="acertoMinimo2" type="text" placeholder="% de acerto mínima">
+                    <input class="nivel-URL" id="imgNivel2" type="url" placeholder="URL da imagem do nível">
+                    <input class="nivel-descricao" id="descricaoNivel2" type="text" placeholder="Descrição do nível">
+                </form>
+            </div>
+            <div class="box-form pt-00">
+                <div class="container">
+                    <p>Nível 3</p>
+                    <ion-icon onclick="abreFormulario(this)" name="create-outline"></ion-icon>
+                </div>
+                <form class="hide">
+                    <input class="nivel-titulo" id="tituloNivel3" type="text" placeholder="Título do nível">
+                    <input class="nivel-acerto-minimo" id="acertoMinimo3" type="text" placeholder="% de acerto mínima">
+                    <input class="nivel-URL" id="imgNivel3" type="url" placeholder="URL da imagem do nível">
+                    <input class="nivel-descricao" id="descricaoNivel3" type="text" placeholder="Descrição do nível">
+                </form>
+            </div>
+            <p class="invisible">Os dados inseridos não são válidos!</p>
+            <button onclick="informacoesNivelQuizz()">Prosseguir para criar perguntas</button>
+        </div>
+
+        <div class="pageSucessoQuizz hide">
+            <p class="pageSucessoQuizz-title">Seu quizz está pronto!</p>
+            <div class="pageSucessoQuizz-img"></div>
+            <div class="pageSucessoQuizz-botao">
+                <button onclick="PlayCreatedQuizz()">Acessar Quizz</button>
+                <div class="botaoVoltar" onclick="returnHome()">Voltar pra home</div>
+            </div>
+        </div>-->
+
+    </div>
+    
+</body>
+
+</html>
